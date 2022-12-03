@@ -1,4 +1,5 @@
 package Algo1;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,7 @@ public class Vertex {
     public Vertex() {
         edges = new ArrayList<>();
         this.key = Integer.MAX_VALUE;
+
     }
 
 

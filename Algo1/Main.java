@@ -13,12 +13,12 @@ public class Main {
         Vertex v6 = new Vertex();
 
         //add vertices to the graph:
-        g.addVertex(v1 , 'A');
-        g.addVertex(v2 , 'B');
-        g.addVertex(v3 , 'C');
-        g.addVertex(v4 , 'D');
-        g.addVertex(v5 , 'E');
-        g.addVertex(v6 , 'F');
+        g.addVertex(v1, 'A');
+        g.addVertex(v2, 'B');
+        g.addVertex(v3, 'C');
+        g.addVertex(v4, 'D');
+        g.addVertex(v5, 'E');
+        g.addVertex(v6, 'F');
 
         //add edges to the graph:
         g.addEdge(v1, v2, 7);
@@ -39,6 +39,13 @@ public class Main {
         System.out.println("\nMST Graph:");
 //        //print the minimum spanning tree:
         mst.printGraph();
+
+        mst.addEdge(v3, v5, 9);
+
+        Graph newMST = Graph.removeCycle(mst, mst.getEdge(v3, v5));
+
+        System.out.println("\nNew MST Graph:");
+        newMST.printGraph();
 
     }
 }
