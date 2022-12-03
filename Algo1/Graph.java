@@ -55,7 +55,7 @@ public class Graph {
 
     }
 
-    public static Graph removeCycle(Graph mst, Edge e) {
+    public static Graph addedEdgeToMST(Graph mst, Edge e) {
         //create a list of vertices that are in the cycle:
         List<Edge> cycle = new ArrayList<>();
         cycle.add(e);

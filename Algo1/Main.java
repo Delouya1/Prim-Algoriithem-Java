@@ -42,7 +42,7 @@ public class Main {
 
         mst.addEdge(v3, v5, 9);
 
-        Graph newMST = Graph.removeCycle(mst, mst.getEdge(v3, v5));
+        Graph newMST = Graph.addedEdgeToMST(mst, mst.getEdge(v3, v5));
 
         System.out.println("\nNew MST Graph:");
         newMST.printGraph();
