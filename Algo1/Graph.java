@@ -13,6 +13,17 @@ public class Graph {
         vertices = new ArrayList<>();
         edges = new ArrayList<>();
     }
+    //copy constructor
+    public Graph(Graph g){
+        this.vertices = new ArrayList<>();
+        this.edges = new ArrayList<>();
+        for(Vertex v : g.vertices){
+            this.vertices.add(new Vertex(v));
+        }
+        for(Edge e : g.edges){
+            this.edges.add(new Edge(e));
+        }
+    }
 
     public static Graph Prim(Graph g) {
         Graph mst = new Graph();
@@ -125,10 +136,35 @@ public class Graph {
 
     //printGraph prints the graph and weight of each edge:
     public void printGraph() {
-        for (Edge e : edges) {
-            System.out.println(e.v1.name + " " + e.v2.name + " " + e.weight);
+        //printGraph prints the edges and weight of each edge as a table:
+
+        System.out.println("V1\tV2\tWeight");
+        //split the edges into two lists and present them as a table one next to the other:
+        List<Edge> edges1 = new ArrayList<>();
+        List<Edge> edges2 = new ArrayList<>();
+        List<Edge> edges3 = new ArrayList<>();
+
+        for (int i = 0; i < edges.size(); i++) {
+            if (i % 3 == 0) {
+                edges1.add(edges.get(i));
+            } else if (i % 3 == 1) {
+                edges2.add(edges.get(i));
+            } else {
+                edges3.add(edges.get(i));
+            }
         }
+        //print the edges and weight of each edge as a table:
+        for (int i = 0; i < edges1.size(); i++) {
+            System.out.print(edges1.get(i).v1.name + "--" + edges1.get(i).v2.name + "\t" + edges1.get(i).weight + "\t\t");
+            if (i < edges2.size()) {
+                System.out.print(edges2.get(i).v1.name + "--" + edges2.get(i).v2.name + "\t" + edges2.get(i).weight + "\t\t");
+            }
+            if (i < edges3.size()) {
+                System.out.print(edges3.get(i).v1.name + "--" + edges3.get(i).v2.name + "\t" + edges3.get(i).weight + "\t");
+            }
+            System.out.println();
+        }
+
     }
 
 }
-

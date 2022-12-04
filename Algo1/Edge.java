@@ -13,4 +13,9 @@ public class Edge {
     }
 
 
+    public Edge(Edge e) {
+        this.v1 = e.v1;
+        this.v2 = e.v2;
+        this.weight = e.weight;
+    }
 }

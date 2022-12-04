@@ -17,4 +17,10 @@ public class Vertex {
     }
 
 
+    public Vertex(Vertex v) {
+        this.edges = new ArrayList<>();
+        this.name = v.name;
+        this.Pi = v.Pi;
+        this.key = v.key;
+    }
 }
